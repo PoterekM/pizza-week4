@@ -19,7 +19,12 @@ Pizza.prototype.calcTotal = function() {
     total = 66
     alert("uhhh... do you want us to clean out our kitchen for you or not? Ya need to pick a size in order for us to make this.")
   }
-  return total;
+
+    // Calculate based number of toppings
+  for (var index = 0; index < this.topping.length; index ++) {
+     total += 3;
+   }
+   return total;
 };
 
 // User Interface
