@@ -16,5 +16,7 @@ $(document).ready(function() {
     $("input:checkbox[name=toppings]:checked").each(function() {
       userToppings.push($(this).val());
     });
+
+    var newPizza = new Pizza(inputSize, userToppings);
   });
 });
