@@ -16,15 +16,13 @@ Pizza.prototype.calcTotal = function() {
     total += 24
   } else if (this.size === "mondo") {
     total += 60
-  // } else {
-  //   return "undefined";
   }
 
     // Calculate based number of toppings
   for (var index = 0; index < this.topping.length; index ++) {
-     total += 3;
-   }
-   return total;
+    total += 3;
+  }
+  return total;
 };
 
 // User Interface
@@ -40,23 +38,13 @@ $(document).ready(function() {
 
     var newPizza = new Pizza(inputSize, userToppings, Pizza.calcTotal);
 
-    // if (Pizza.size === undefined) {
-    //   alert("Please enter a size.");
-    // }
-
-    if (Pizza.calcTotal === undefined) {
+    if (inputSize === undefined) {
       alert("please enter a size!");
     } else {
       $("#user-size").text(newPizza.size);
     }
     $("#user-toppings").text(newPizza.topping + " ,");
 
-    // if (Pizza.size === undefined) {
-    //   alert("Please enter a size.")
-    // }
     $("#user-total").text("$" + newPizza.calcTotal());
-    // newPizza.calcTotal.val() === false {
-    //   alert("Please enter your size!");
-    // }
   });
 });
