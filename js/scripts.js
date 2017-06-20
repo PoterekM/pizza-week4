@@ -38,11 +38,12 @@ $(document).ready(function() {
 
     var newPizza = new Pizza(inputSize, userToppings, Pizza.calcTotal);
 
+    $("#displayOrder").show();
     if (inputSize === undefined) {
       alert("please enter a size!");
-    } else {
-      $("#user-size").text(newPizza.size);
+      $("#displayOrder").hide();
     }
+    $("#user-size").text(newPizza.size);
     $("#user-toppings").text(newPizza.topping + " ,");
 
     $("#user-total").text("$" + newPizza.calcTotal());
