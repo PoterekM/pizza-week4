@@ -4,7 +4,7 @@ function Pizza (size, topping) {
   this.topping = topping;
 }
 
-// var sizeCheck = function() {
+// // var sizeCheck = function() {
 //   if (this.size !== "small") && (this.size !== "medium") && (this.size !== "large") && (this.size !== "mondo") {
 //     return false;
 //   }
@@ -46,11 +46,15 @@ $(document).ready(function() {
 
     var newPizza = new Pizza(inputSize, userToppings, Pizza.calcTotal);
 
-    if (Pizza.size === undefined) {
-      alert("Please enter a size.");
-    }
+    // if (Pizza.size === undefined) {
+    //   alert("Please enter a size.");
+    // }
     $("#user-size").text(newPizza.size);
     $("#user-toppings").text(newPizza.topping + " ,");
+
+    if ((this.size !== "small") && (this.size !== "medium") && (this.size !== "large") && (this.size !== "mondo")) {
+      alert("Please enter a size.")
+    }
     $("#user-total").text("$" + newPizza.calcTotal());
     // newPizza.calcTotal.val() === false {
     //   alert("Please enter your size!");
