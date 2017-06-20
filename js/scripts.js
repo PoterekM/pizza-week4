@@ -4,12 +4,6 @@ function Pizza (size, topping) {
   this.topping = topping;
 }
 
-// // var sizeCheck = function() {
-//   if (this.size !== "small") && (this.size !== "medium") && (this.size !== "large") && (this.size !== "mondo") {
-//     return false;
-//   }
-// });
-
 console.log(Pizza.size);
 
 Pizza.prototype.calcTotal = function() {
@@ -22,8 +16,8 @@ Pizza.prototype.calcTotal = function() {
     total += 24
   } else if (this.size === "mondo") {
     total += 60
-  } else {
-    return Pizza.size = undefined;
+  // } else {
+  //   return "undefined";
   }
 
     // Calculate based number of toppings
@@ -49,12 +43,17 @@ $(document).ready(function() {
     // if (Pizza.size === undefined) {
     //   alert("Please enter a size.");
     // }
-    $("#user-size").text(newPizza.size);
+
+    if (Pizza.calcTotal === undefined) {
+      alert("please enter a size!");
+    } else {
+      $("#user-size").text(newPizza.size);
+    }
     $("#user-toppings").text(newPizza.topping + " ,");
 
-    if ((this.size !== "small") && (this.size !== "medium") && (this.size !== "large") && (this.size !== "mondo")) {
-      alert("Please enter a size.")
-    }
+    // if (Pizza.size === undefined) {
+    //   alert("Please enter a size.")
+    // }
     $("#user-total").text("$" + newPizza.calcTotal());
     // newPizza.calcTotal.val() === false {
     //   alert("Please enter your size!");
