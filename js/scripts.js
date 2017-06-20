@@ -18,5 +18,8 @@ $(document).ready(function() {
     });
 
     var newPizza = new Pizza(inputSize, userToppings);
+
+    $("#user-size").text(newPizza.size);
+    $("#user-toppings").text(newPizza.topping + " ,");
   });
 });
